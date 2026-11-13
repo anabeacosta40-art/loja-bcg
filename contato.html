@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Casa BCG</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <canvas id="snow-canvas"></canvas>
+
+  <!-- Cabeçalho -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-snowflake"></i> Casa BCG
+    </div>
+    <nav class="nav-links" id="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="produtos.html" class="nav-link">Produtos</a>
+      <a href="sobre.html" class="nav-link">Sobre Nós</a>
+      <a href="ofertas.html" class="nav-link">Ofertas</a>
+      <a href="contato.html" class="nav-link active">Contato</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-icon-btn" onclick="abrirCarrinho()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
+      <button class="mobile-toggle" id="nav-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Seção de Contato -->
+  <section id="contato" class="page-section">
+    <div class="page-banner">
+      <h1>Fale com a Casa BCG</h1>
+      <p>Estamos prontos para atender suas encomendas natalinas</p>
+    </div>
+
+    <div class="container" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <div class="contact-grid">
+        <!-- Formulário de Mensagem -->
+        <div class="contact-form-card">
+          <h2>Envie uma Mensagem</h2>
+          <div id="form-success" class="alert-success" style="display: none;">
+            Sua mensagem foi enviada com sucesso! Responderemos em breve.
+          </div>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="nome">Nome Completo *</label>
+              <input type="text" id="nome" placeholder="Digite seu nome">
+              <span class="error-msg" id="err-nome">Por favor, digite seu nome.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" placeholder="seu@email.com">
+              <span class="error-msg" id="err-email">Por favor, digite um e-mail válido.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <input type="text" id="assunto" placeholder="Encomenda, dúvida, evento...">
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem">Mensagem *</label>
+              <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
+              <span class="error-msg" id="err-mensagem">Por favor, escreva sua mensagem.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+              <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+          </form>
+        </div>
+
+        <!-- Cartão de Informações -->
+        <div class="contact-info-card">
+          <h2>Informações da Casa BCG</h2>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Endereço:</strong><br>
+              Avenida das Neves, 1225 - Centro<br>
+              São Paulo - SP
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <strong>Telefone / WhatsApp:</strong><br>
+              (11) 99999-9999
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Horário de Funcionamento:</strong><br>
+              Terça a Domingo: 09h00 - 20h00
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="btn btn-secondary"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="btn btn-secondary"><i class="fab fa-facebook"></i> Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrinho Lateral -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+      <h3>Seu Carrinho - Casa BCG</h3>
+      <button onclick="fecharCarrinho()" class="close-btn">&times;</button>
+    </div>
+    <div class="cart-body" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total-wrap">
+        <span>Total:</span>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+      <button class="btn btn-whatsapp" onclick="enviarWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Botão de Música -->
+  <button class="music-btn" id="music-toggle" title="Música de Natal">
+    <i class="fas fa-volume-mute"></i>
+  </button>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2026 Casa BCG. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

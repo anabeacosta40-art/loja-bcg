@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos | Casa BCG</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <canvas id="snow-canvas"></canvas>
+
+  <!-- Cabeçalho -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-snowflake"></i> Casa BCG
+    </div>
+    <nav class="nav-links" id="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="produtos.html" class="nav-link active">Produtos</a>
+      <a href="sobre.html" class="nav-link">Sobre Nós</a>
+      <a href="ofertas.html" class="nav-link">Ofertas</a>
+      <a href="contato.html" class="nav-link">Contato</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-icon-btn" onclick="abrirCarrinho()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
+      <button class="mobile-toggle" id="nav-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Seção de Produtos -->
+  <section id="produtos" class="page-section">
+    <div class="page-banner">
+      <h1>Nosso Catálogo Completo</h1>
+      <p>Explore nossas 50 opções deliciosas preparadas pela Casa BCG para o seu Natal</p>
+    </div>
+
+    <div class="container" style="margin-top: 2rem; margin-bottom: 3rem;">
+      <!-- Barra de Busca e Filtro por Categoria -->
+      <div class="filter-bar">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-input" placeholder="Buscar produto por nome ou ingrediente...">
+        </div>
+        <div class="category-box">
+          <select id="category-filter">
+            <option value="todos">Todas as Categorias</option>
+            <option value="biscoitos">Biscoitos e Cookies</option>
+            <option value="chocolates">Docinhos e Chocolates</option>
+            <option value="bolos">Bolos e Cupcakes</option>
+            <option value="panetones">Panetones e Chocotones</option>
+            <option value="sobremesas">Sobremesas</option>
+            <option value="quentes">Bebidas Quentes</option>
+            <option value="geladas">Bebidas Geladas</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Contador e Grade de Produtos -->
+      <div id="products-count" class="products-count">Mostrando 50 de 50 produtos</div>
+      <div id="no-products" class="no-products" style="display: none;">Nenhum produto foi encontrado com esses filtros.</div>
+      <div class="grid-products" id="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- Carrinho Lateral -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+      <h3>Seu Carrinho - Casa BCG</h3>
+      <button onclick="fecharCarrinho()" class="close-btn">&times;</button>
+    </div>
+    <div class="cart-body" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total-wrap">
+        <span>Total:</span>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+      <button class="btn btn-whatsapp" onclick="enviarWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Botão de Música -->
+  <button class="music-btn" id="music-toggle" title="Música de Natal">
+    <i class="fas fa-volume-mute"></i>
+  </button>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2026 Casa BCG. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

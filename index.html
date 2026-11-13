@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Configuração essencial para funcionar em celular e tablet -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa BCG | Loja Natalina</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Efeito de neve no fundo -->
+  <canvas id="snow-canvas"></canvas>
+
+  <!-- Cabeçalho e Menu de Navegação -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-snowflake"></i> Casa BCG
+    </div>
+    <nav class="nav-links" id="nav-menu">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="produtos.html" class="nav-link">Produtos</a>
+      <a href="sobre.html" class="nav-link">Sobre Nós</a>
+      <a href="ofertas.html" class="nav-link">Ofertas</a>
+      <a href="contato.html" class="nav-link">Contato</a>
+    </nav>
+    <div class="nav-actions">
+      <!-- Botão do Carrinho -->
+      <button class="cart-icon-btn" onclick="abrirCarrinho()" aria-label="Abrir Carrinho">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
+      <!-- Botão Hambúrguer (aparece só no celular/tablet) -->
+      <button class="mobile-toggle" id="nav-toggle" aria-label="Abrir Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <section id="home" class="page-section">
+    <!-- Banner Principal -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>O Sabor Encantado do Natal na Casa BCG</h1>
+        <p>Sinta a magia em cada xícara e delicie-se com nossos biscoitos e panetones artesanais.</p>
+        <div class="hero-btns">
+          <a href="produtos.html" class="btn btn-primary"><i class="fas fa-cookie-bite"></i> Ver Catálogo</a>
+          <a href="ofertas.html" class="btn btn-secondary"><i class="fas fa-tag"></i> Ofertas Especiais</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrossel de Promoções -->
+    <div class="container" style="margin-top: 3rem;">
+      <h2 class="section-title">Destaques da Semana</h2>
+      <div class="carousel-container">
+        <div class="carousel-track" id="carousel-track">
+          <div class="carousel-slide">
+            <img src="img/biscoito de natal.jpg" alt="Promoção Biscoitos">
+            <div class="slide-caption">
+              <h3>Combo Natalino de Biscoitos Casa BCG</h3>
+              <p>De R$ 45,00 por apenas R$ 34,90!</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="img/Chocotone de Ninho com creme de avelã.jpg" alt="Chocotone Recheado">
+            <div class="slide-caption">
+              <h3>Chocotone de Ninho com Nutella</h3>
+              <p>Peça já o seu para a ceia de Natal!</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn prev" id="prev-slide" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next" id="next-slide" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Produtos Mais Pedidos (preenchido pelo script.js) -->
+    <div class="container" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <h2 class="section-title">Os Mais Pedidos</h2>
+      <div class="grid-products" id="home-featured-grid"></div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="produtos.html" class="btn btn-primary">Ver Todos os 50 Produtos <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrinho Lateral -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+      <h3>Seu Carrinho - Casa BCG</h3>
+      <button onclick="fecharCarrinho()" class="close-btn">&times;</button>
+    </div>
+    <div class="cart-body" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total-wrap">
+        <span>Total:</span>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+      <button class="btn btn-whatsapp" onclick="enviarWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante de Música -->
+  <button class="music-btn" id="music-toggle" title="Música de Natal">
+    <i class="fas fa-volume-mute"></i>
+  </button>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2026 Casa BCG. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas | Casa BCG</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <canvas id="snow-canvas"></canvas>
+
+  <!-- Cabeçalho -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-snowflake"></i> Casa BCG
+    </div>
+    <nav class="nav-links" id="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="produtos.html" class="nav-link">Produtos</a>
+      <a href="sobre.html" class="nav-link">Sobre Nós</a>
+      <a href="ofertas.html" class="nav-link active">Ofertas</a>
+      <a href="contato.html" class="nav-link">Contato</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-icon-btn" onclick="abrirCarrinho()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
+      <button class="mobile-toggle" id="nav-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Seção de Ofertas -->
+  <section id="ofertas" class="page-section">
+    <div class="page-banner">
+      <h1>Ofertas Especiais & Galeria</h1>
+      <p>Aproveite os descontos da temporada e confira momentos festivos na Casa BCG</p>
+    </div>
+
+    <div class="container" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <h2 class="section-title">Combo Promocional Casa BCG</h2>
+      
+      <!-- Caixa de Destaque da Oferta -->
+      <div class="offer-box">
+        <div class="offer-info">
+          <span class="badge" style="background: var(--dourado); color: var(--verde-fundo);">OFERTA LIMITADA</span>
+          <h2 style="color: var(--vermelho-natal); margin: 0.5rem 0;">Kits de Panetones & Bebidas</h2>
+          <p>Leve 1 Chocotone Recheado + 2 Chocolates Quentes Cremosos com 25% de desconto exclusivo para encomendas antecipadas.</p>
+          <div style="font-size: 1.8rem; font-weight: bold; color: var(--dourado); margin: 1rem 0;">
+            <span style="text-decoration: line-through; color: #888; font-size: 1.2rem;">R$ 88,90</span> R$ 66,90
+          </div>
+          <button class="btn btn-primary" onclick="adicionarAoCarrinho(28)">Garantir Oferta</button>
+        </div>
+        <img id="img-oferta-especial" class="offer-img" src="img/oferta.jpg" alt="Oferta Especial">
+      </div>
+
+      <!-- Galeria de Fotos -->
+      <h2 class="section-title" style="margin-top: 4rem;">Galeria de Momentos Mágicos</h2>
+      <p style="text-align: center; color: var(--texto-suave); margin-bottom: 2rem;">Toque ou clique em qualquer imagem para ampliá-la</p>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item"><img id="galeria-1" src="img/momento familia.jpg" alt="Família na Casa BCG"></div>
+        <div class="gallery-item"><img id="galeria-2" src="img/comendo.jpg" alt="Provando biscoitos"></div>
+        <div class="gallery-item"><img id="galeria-3" src="img/abraço.jpg" alt="Abraço de Natal"></div>
+        <div class="gallery-item"><img id="galeria-4" src="img/chocotone-mao.jpg" alt="Chocotone artesanal"></div>
+        <div class="gallery-item"><img id="galeria-5" src="img/loja.jpg" alt="Nossa Loja"></div>
+        <!-- Corrigido de cafe.jpgg para cafe.jpg -->
+        <div class="gallery-item"><img id="galeria-6" src="img/cafe.jpg" alt="Café especial"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrinho Lateral -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+      <h3>Seu Carrinho - Casa BCG</h3>
+      <button onclick="fecharCarrinho()" class="close-btn">&times;</button>
+    </div>
+    <div class="cart-body" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total-wrap">
+        <span>Total:</span>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+      <button class="btn btn-whatsapp" onclick="enviarWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal para ampliar foto da galeria -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <img id="lightbox-img" src="" alt="Imagem Ampliada">
+  </div>
+
+  <!-- Botão de Música -->
+  <button class="music-btn" id="music-toggle" title="Música de Natal">
+    <i class="fas fa-volume-mute"></i>
+  </button>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2026 Casa BCG. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
